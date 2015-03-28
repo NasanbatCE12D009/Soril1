@@ -1,3 +1,4 @@
+#soril1
 #include "D:\Hicheel\PIC code\Soril1_2.h"
 #define led PIN_D0
 
