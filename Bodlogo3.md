@@ -9,14 +9,15 @@ char n;
 float data[10],sum=0;
 int i=0,j;
 
+// timeriin tasaldal
 #int_TIMER1
 TIMER1_isr() 
 {
    set_timer1(55535);
-   n=read_adc();
-   data[i]=n*0.01965;
+   n=read_adc();    
+   data[i]=n*0.01965;   // adc giin toon utga iig volt bolgon data[i] d hiine
    i++;
-   if(i==11) i=0;
+   if(i==11) i=0; 
 }
 
 
@@ -44,17 +45,17 @@ void main()
    
    while(1)
    {
-      output_toggle(led);
+      output_toggle(led);  // led asaah
       delay_ms(200);
-      sum=0;
+      sum=0;   
       if(i==10)
       {
          for(j=0;j<=10;j++)
          {
-            sum=sum+data[j];
+            sum=sum+data[j];   // data[i] 10 bolj duurhed niilberiig olon sum d hiine
          }
          i=0;
-         printf("%f \r\n",sum/10);        
+         printf("%f \r\n",sum/10);  // olson niilberee dundajlaj serialaar damjuulah      
       }
    }
 }
