@@ -20,6 +20,7 @@ void main()
 
    // TODO: USER CODE!!
    
+   set_tris_d(0x00);
    
    while(1)
    {
